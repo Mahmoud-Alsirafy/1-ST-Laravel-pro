@@ -29,7 +29,7 @@ class Image extends Model
                 "product_id" => $id,
                 "image" => $newName
             ]);
-            move_uploaded_file($tmp, storage_path("app/public/i/$newName"));
+            move_uploaded_file($tmp, storage_path("app/public/images/$newName"));
         }
     }
 
@@ -37,7 +37,7 @@ class Image extends Model
     {
         $file = Image::where("product_id", $id)->pluck("image");
         foreach ($file as $key => $value) {
-            unlink(storage_path("app/public/i/".$value));
+            unlink(storage_path("app/public/images/".$value));
         }
     }
 }

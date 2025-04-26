@@ -4,68 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\loginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class loginController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('dashbord.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(loginRequest $request)
     {
-        $data = $request->except("_token");
+        $credentials = $request->only('email', 'password');
 
-        if (auth()->attempt($data)) {
-            return view('dashbord.product.add');
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('admin.index');
         } else {
-            return to_route('login.index');
+            return redirect()->route('login.index')->withErrors([
+                'email' => 'بيانات الدخول غير صحيحة',
+            ]);
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function logout()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerateToken();
+        return redirect()->route('login.index');
     }
 }

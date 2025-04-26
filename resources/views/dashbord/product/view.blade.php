@@ -33,7 +33,7 @@
     <td scope="col">{{ $value->cat }}</td>
     <td scope="col" class="w-25 img-fluid">
         @foreach ( $value->image as $v )
-            <img src="{{ asset("storage/i/".$v->image) }}" class="w-25" alt="">
+            <img src="{{ asset("storage/images/".$v->image) }}" class="w-25" alt="">
         @endforeach
     </td>
     <td>

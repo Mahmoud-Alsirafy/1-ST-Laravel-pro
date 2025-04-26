@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2025 at 11:15 PM
+-- Generation Time: Apr 26, 2025 at 08:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `gender`, `permission`, `created_at`, `updated_at`) VALUES
-(1, 'Mahmoud', 'alsirafy123@gmail.com', '$2y$12$AV9jESqcKkZFAi9ClTrzcu7.OkemnZ8Alrzt2j84kzSowuVOtttvS', 'female', 'update.user delete.user view.product', '2025-02-21 11:01:25', '2025-02-21 11:01:25');
+(1, 'user', 'user@gmail.com', '$2y$12$x0V4Rw16PKEVubYRpmeDqeNG3YrMs.hpunKx.swYzENt8wc1zgVUu', 'male', 'add.user update.user delete.user add.product', '2025-04-26 13:39:39', '2025-04-26 13:39:39');
 
 -- --------------------------------------------------------
 
@@ -104,8 +104,7 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `product_id`, `image`, `created_at`, `updated_at`) VALUES
-(11, 2, '67c21f7fc4c9c.jpg', '2025-02-28 18:41:35', '2025-02-28 18:41:35'),
-(12, 3, '67c21fa58ec62.jpg', '2025-02-28 18:42:13', '2025-02-28 18:42:13');
+(1, 1, '680d1072b2589.png', '2025-04-26 13:57:22', '2025-04-26 13:57:22');
 
 -- --------------------------------------------------------
 
@@ -199,8 +198,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `count`, `cat`, `created_at`, `updated_at`) VALUES
-(2, 'salma', '111', '111', 'labs', '2025-02-28 18:41:35', '2025-02-28 18:41:35'),
-(3, 'salma', '111', '111', 'phones', '2025-02-28 18:42:13', '2025-02-28 18:42:13');
+(1, 'salma', '111', '111', 'labs', '2025-04-26 13:57:22', '2025-04-26 13:57:22');
 
 -- --------------------------------------------------------
 
@@ -222,8 +220,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('A7mqwqfEOYG7BykIxW9oH9g5inUaM0Ogx1pUhbPo', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSnlHQ0lhZXdIZlZWQVh5Z3k5VzlGRDFZbzgyQWwwWUsxeVdGdmZ0eCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1740775404),
-('m8OAJXhjtg8VHNNPudeMij68M2SrtwCwxRPbxWpe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoia01JUUdGNHNtejJNQVUzWVlJaHFxQ2xGTXVtZ1FIbVEzMEdVeHpDdSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoL3Byb2R1Y3QiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1744060468);
+('50PU1GAkckWtWJDszB4uDCKAnllDDMhuBZ9MXdWG', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidW15YUVLc0h1NlpwSVA1QlJyY2ZZRHpUaUFMbExOZWpGSFVhcXZxbyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoL2FkbWluIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1745685579),
+('Clue9x0kn3vOooDu85i5U1idW7XTkZRLsCOD6ZMM', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiODhnTHFlYkNZM0NxV3IxY3FkMkFBczU2ZHAzTU03bjRZakxGTWhXTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoL2FkbWluIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1745692578);
 
 -- --------------------------------------------------------
 
@@ -249,7 +247,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `email_verified_at`, `password`, `password_confirmation`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'mahmoud', 'wael', 'wael@gmail.com', NULL, '$2y$12$.wIiGyDzdTd01/U5iV4a4.Pa2uQh6Ko3J.W32jWkxtfbZfORFjP5y', '$2y$12$844.6DTgLQTPOcABoGSKeu6r8sywG8p8le3FTLejuZR28RzEHzAYu', NULL, '2025-02-21 11:16:02', '2025-02-21 11:16:02');
+(1, 'user', 'user', 'user@gmail.com', NULL, '$2y$12$oEq0m2cesworox8MQSjuN.8CsmQZKFLo5h/hIYl9DEJTd4Zsx32Iy', '$2y$12$kyfbmm7NlaXiVgt18SIss.PcdiWSOQ/P77zG3JpqM7oXDcTVa2lKq', NULL, '2025-04-26 13:54:00', '2025-04-26 13:54:00');
 
 --
 -- Indexes for dumped tables
@@ -354,7 +352,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -372,13 +370,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
